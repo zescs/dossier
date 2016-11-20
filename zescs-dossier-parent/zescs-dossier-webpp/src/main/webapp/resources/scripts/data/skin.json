@@ -1,0 +1,54 @@
+[
+	{
+		"id": "default",
+		"text": "默认"
+	},
+	{
+		"id": "blue",
+		"text": "浅蓝"
+	},
+	{
+		"id": "gray",
+		"text": "浅灰"
+	},
+	{
+		"id": "olive2003",
+		"text": "浅绿"
+	},
+	{
+		"id": "blue2010",
+		"text": "淡蓝"
+	},
+	{
+		"id": "blue2003",
+		"text": "天空蓝"
+	},
+	{
+		"id": "bootstrap",
+		"text": "Bootstrap"
+	},
+	{
+		"id": "metro",
+		"text": "metro"
+	},
+	{
+		"id": "pure",
+		"text": "pure"
+	},
+	{
+		"id": "metro-green",
+		"text": "metro-green"
+	},
+	{
+		"id": "metro-orange",
+		"text": "metro-orange"
+	},
+	{
+		"id": "jqueryui-smoothness",
+		"text": "smoothness"
+	},
+	{
+		"id": "jqueryui-cupertino",
+		"text": "cupertino"
+	}
+]

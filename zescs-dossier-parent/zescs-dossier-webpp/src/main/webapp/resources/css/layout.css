@@ -1,0 +1,14 @@
+body{margin:0;padding:0;font:12px/20px \5b8b\4f53,Arial,sans-serif;}
+address,article,aside,dd,dl,dt,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,img,li,nav,ok,p,section,ul{margin:0;padding:0;}
+article,aside,figure,footer,header,hgroup,nav,section{display:block;}
+a{overflow:hidden;text-decoration:none;}
+a>img,img{border:none;}
+.after::after{clear:both;display:block;overflow:hidden;content:"";}
+li{list-style:none;list-style-position:inside;}
+#from_con{padding:20px 5px 10px 5px;}
+.from_item{padding-bottom:10px;}
+.form_item_middle,.form_item_middle_ckcode{float:left;}
+.from_btn{padding:5px 0;}
+.from_btn_middle{float:left;padding:0 10px;width:190px;}
+.form_btn_left{float:left;width:70px;height:25px;}
+.form_btn_right{float:right;width:70px;height:25px;cursor:pointer;}

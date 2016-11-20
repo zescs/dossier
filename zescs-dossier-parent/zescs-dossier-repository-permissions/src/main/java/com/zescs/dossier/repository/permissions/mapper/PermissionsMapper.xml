@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zescs.dossier.repository.permissions.mapper.PermissionsMapper">
+  <resultMap id="BaseResultMap" type="com.zescs.dossier.model.permissions.bean.Permissions">
+    <id column="permissionsId" jdbcType="INTEGER" property="permissionsId" />
+    <result column="roleId" jdbcType="INTEGER" property="roleId" />
+    <result column="menuId" jdbcType="INTEGER" property="menuId" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    permissionsId, roleId, menuId, createDate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from p_permissions
+    where permissionsId = #{permissionsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from p_permissions
+    where permissionsId = #{permissionsId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zescs.dossier.model.permissions.bean.Permissions">
+    insert into p_permissions (permissionsId, roleId, menuId, 
+      createDate)
+    values (#{permissionsId,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER}, 
+      #{createDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zescs.dossier.model.permissions.bean.Permissions">
+    insert into p_permissions
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permissionsId != null">
+        permissionsId,
+      </if>
+      <if test="roleId != null">
+        roleId,
+      </if>
+      <if test="menuId != null">
+        menuId,
+      </if>
+      <if test="createDate != null">
+        createDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permissionsId != null">
+        #{permissionsId,jdbcType=INTEGER},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="menuId != null">
+        #{menuId,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zescs.dossier.model.permissions.bean.Permissions">
+    update p_permissions
+    <set>
+      <if test="roleId != null">
+        roleId = #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="menuId != null">
+        menuId = #{menuId,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        createDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where permissionsId = #{permissionsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zescs.dossier.model.permissions.bean.Permissions">
+    update p_permissions
+    set roleId = #{roleId,jdbcType=INTEGER},
+      menuId = #{menuId,jdbcType=INTEGER},
+      createDate = #{createDate,jdbcType=TIMESTAMP}
+    where permissionsId = #{permissionsId,jdbcType=INTEGER}
+  </update>
+</mapper>

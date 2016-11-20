@@ -1,0 +1,252 @@
+@CHARSET "UTF-8";
+.icon-boy,.icon-female,.icon-cus_btn_mail_dark_stuffed,.icon-cus_btn_mail_light,.icon-cus_btn_mail_dark_new_2{
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	margin: auto;
+	background: url(../images/icon/user.gif) no-repeat;
+	text-align: center;
+	display: block;
+}
+.icon-cus_btn_mail_dark_stuffed{
+	background: url(../images/icon/mail_dark_stuffed.png) no-repeat;
+}
+.icon-cus_btn_mail_dark_new_2{
+	background: url(../images/icon/mail_dark_new_2.png) no-repeat;
+}
+.icon-cus_btn_mail_light{
+	background: url(../images/icon/mail_light.png) no-repeat;
+}
+.icon-cus-home{
+	background: url(../images/icon/home.png) no-repeat;
+}
+.icon-female {
+	background: url(../images/icon/user_female.gif) no-repeat;
+}
+.icon-comment {
+	background: url(../images/icon/comment.png) no-repeat;
+}
+.icon-comment_add {
+	background: url(../images/icon/comment_add.png) no-repeat;
+}
+.icon-email {
+	background: url(../images/icon/email.png) no-repeat;
+}
+.icon-email_add {
+	background: url(../images/icon/email_add.png) no-repeat;
+}
+.icon-cus-window{
+	background: url(../images/icon/window.png) no-repeat;
+}
+.icon-cus-arrow_down{
+	background: url(../images/icon/arrow_down.png) no-repeat;
+}
+.icon-cus-form_go{
+	background: url(../images/icon/form_go.png) no-repeat;
+}
+.icon-cus-arrow_move{
+	background: url(../images/icon/arrow_move.png) no-repeat;
+}
+.icon-cus-save_labled_lock{
+	background: url(../images/icon/save_labled_lock.png) no-repeat;
+}
+.icon-cus-printer_go{
+	background: url(../images/icon/printer_go.png) no-repeat;
+}
+.icon-cus-folder_find{
+	background: url(../images/icon/folder_find.png) no-repeat;
+}
+.icon-cus-email_feed{
+	background: url(../images/icon/email_feed.png) no-repeat;
+}
+.icon-cus-form{
+	background: url(../images/icon/form.png) no-repeat;
+}
+.icon-cus-globe_add{
+	background: url(../images/icon/globe_add.png) no-repeat;
+}
+.icon-cus-text_field{
+	background: url(../images/icon/text_field.png) no-repeat;
+}
+.icon-cus-key{
+	background: url(../images/icon/key.png) no-repeat;
+}
+.icon-cus-screen_small_green{
+	background: url(../images/icon/screen_small_green.png) no-repeat;
+}
+.icon-cus-rename{
+	background: url(../images/icon/rename.png) no-repeat;
+}
+/*folder-start*/
+.icon-cus-folder_link{
+	background: url(../images/icon/folder_link.png) no-repeat;
+}
+.icon-cus-folder_add{
+	background: url(../images/icon/folder_add.png) no-repeat;
+}
+/*folder-end*/
+/*email-start*/
+.icon-cus-email_list{
+	background: url(../images/icon/email_list.png) no-repeat;
+}
+/*email-end*/
+/*window-start*/
+.icon-cus-window_duplicate{
+	background: url(../images/icon/window_duplicate.png) no-repeat;
+}
+/*window-end*/
+.icon-cus-screen_small_green{
+	background: url(../images/icon/screen_small_green.png) no-repeat;
+}
+/*lock-start*/
+.icon-cus-lock{
+	background: url(../images/icon/lock.png) no-repeat;
+}
+/*lock-end*/
+.icon-cus-comment_email{
+	background: url(../images/icon/comment_email.png) no-repeat;
+}
+.icon-cus-globe_feed{
+	background: url(../images/icon/globe_feed.png) no-repeat;
+}
+.icon-cus-find_go{
+	background: url(../images/icon/find_go.png) no-repeat;
+}
+.icon-cus-search_go{
+	background: url(../images/icon/search_go.png) no-repeat;
+}
+.icon-cus-form_edit{
+	background: url(../images/icon/form_edit.png) no-repeat;
+}
+.icon-cus-form_error{
+	background: url(../images/icon/form_error.png) no-repeat;
+}
+.icon-cus-search-edit{
+	background: url(../images/icon/search-edit.png) no-repeat;
+}
+.icon-cus-globe_edit{
+	background: url(../images/icon/globe_edit.png) no-repeat;
+}
+.icon-cus-tv_dark_widescreen{
+	background: url(../images/icon/tv_dark_widescreen.png) no-repeat;
+}
+.icon-cus-spanner_yellow{
+	background: url(../images/icon/spanner_yellow.png) no-repeat;
+}
+.icon-cus-mime_xls{
+	background: url(../images/icon/mime_xls.png) no-repeat;
+}
+.icon-cus-folder_edit{
+	background: url(../images/icon/folder_edit.png) no-repeat;
+}
+.icon-cus-cursor_text{
+	background: url(../images/icon/cursor_text.png) no-repeat;
+}
+.icon-cus-excel-file{
+	background: url(../images/icon/excel-file.gif) no-repeat;
+}
+.icon-cus-web-page-orange{
+	background: url(../images/icon/web-page-orange.gif) no-repeat;
+}
+.icon-cus-sprocket_dark_dropdown{
+	background: url(../images/icon/sprocket_dark_dropdown.png) no-repeat;
+}
+.icon-cus-image_cultured{
+	background: url(../images/icon/image_cultured.png) no-repeat;
+}
+.icon-cus-folder_classic_opened_stuffed{
+	background: url(../images/icon/folder_classic_opened_stuffed.png) no-repeat;
+}
+.icon-cus-folder_modernist_type_movie{
+	background: url(../images/icon/folder_modernist_type_movie.png) no-repeat;
+}
+.icon-cus-download-page-purple{
+	background: url(../images/icon/download-page-purple.gif) no-repeat;
+}
+.icon-cus-download-page-yellow{
+	background: url(../images/icon/download-page-yellow.gif) no-repeat;
+}
+.icon-cus-application_windows_edit{
+	background: url(../images/icon/application_windows_edit.png) no-repeat;
+}
+.icon-cus-application_windows_add{
+	background: url(../images/icon/application_windows_add.png) no-repeat;
+}
+.icon-cus-folder_modernist_down{
+	background: url(../images/icon/folder_modernist_down.png) no-repeat;
+}
+.icon-cus-folder_classic_type_document{
+	background: url(../images/icon/folder_classic_type_document.png) no-repeat;
+}
+.icon-cus-folder_modernist_stuffed_add{
+	background: url(../images/icon/folder_modernist_stuffed_add.png) no-repeat;
+}
+.icon-cus-document_a4{
+	background: url(../images/icon/document_a4.png) no-repeat;
+}
+.icon-cus-calendar_day_right{
+	background: url(../images/icon/calendar_day_right.png) no-repeat;
+}
+.icon-cus-mail_dark{
+	background: url(../images/icon/mail_dark.png) no-repeat;
+}
+.icon-cus-folder_classic_type_movie{
+	background: url(../images/icon/folder_classic_type_movie.png) no-repeat;
+}
+.icon-cus-folder_modernist_opened_stuffed{
+	background: url(../images/icon/folder_modernist_opened_stuffed.png) no-repeat;
+}
+.icon-cus-application_windows_shrink{
+	background: url(../images/icon/application_windows_shrink.png) no-repeat;
+}
+.icon-cus-box_new{
+	background: url(../images/icon/box_new.png) no-repeat;
+}
+.icon-cus-rich_text_color{
+	background: url(../images/icon/rich_text_color.png) no-repeat;
+}
+.icon-cus-contact_blue_edit{
+	background: url(../images/icon/contact_blue_edit.png) no-repeat;
+}
+.icon-cus-contact_grey_edit{
+	background: url(../images/icon/contact_grey_edit.png) no-repeat;
+}
+.icon-cus-contact_blue_add{
+	background: url(../images/icon/contact_blue_add.png) no-repeat;
+}
+.icon-cus-group_grey_edit{
+	background: url(../images/icon/group_grey_edit.png) no-repeat;
+}
+.icon-cus-folder_modernist_type_image{
+	background: url(../images/icon/folder_modernist_type_image.png) no-repeat;
+}
+.icon-cus-document_letter_forward{
+	background: url(../images/icon/document_letter_forward.png) no-repeat;
+}
+.icon-cus-documents_share{
+	background: url(../images/icon/documents_share.png) no-repeat;
+}
+.icon-cus-group_green{
+	background: url(../images/icon/group_green.png) no-repeat;
+}
+.icon-cus-calendar_day_left{
+	background: url(../images/icon/calendar_day_left.png) no-repeat;
+}
+.icon-cus-document_letter_marked{
+	background: url(../images/icon/document_letter_marked.png) no-repeat;
+}
+.icon-cus-view_less_text{
+	background: url(../images/icon/view_less_text.png) no-repeat;
+}
+.icon-cus-id-card{
+	background: url(../images/icon/id-card.png) no-repeat;
+}
+.icon-cus-contact_blue{
+	background: url(../images/icon/contact_blue.png) no-repeat;
+}
+.icon-cus-remove_outline{
+	background: url(../images/icon/remove_outline.png) no-repeat;
+}
+.icon-cus-remove_minus_sign_outline{
+	background: url(../images/icon/remove_minus_sign_outline.png) no-repeat;
+}

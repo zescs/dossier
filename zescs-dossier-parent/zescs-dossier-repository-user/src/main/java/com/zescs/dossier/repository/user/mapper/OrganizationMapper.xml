@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zescs.dossier.repository.user.mapper.OrganizationMapper">
+	<resultMap id="BaseResultMap"
+		type="com.zescs.dossier.model.user.bean.Organization">
+		<id column="organizationId" jdbcType="INTEGER" property="organizationId" />
+		<result column="branch" jdbcType="VARCHAR" property="branch" />
+		<result column="userId" jdbcType="INTEGER" property="userId" />
+		<result column="parentId" jdbcType="INTEGER" property="parentId" />
+		<result column="expanded" jdbcType="BIT" property="expanded" />
+		<result column="isLeaf" jdbcType="BIT" property="isLeaf" />
+		<result column="hierarchy" jdbcType="INTEGER" property="hierarchy" />
+		<result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		organizationId, 
+		branch, 
+		userId, 
+		parentId, 
+		expanded, 
+		isLeaf,
+		hierarchy, 
+		createDate,
+		remark
+	</sql>
+	<select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from u_organization
+		<where>
+			organizationId =#{organizationId}
+		</where>
+	</select>
+	<insert id="insert" parameterType="com.zescs.dossier.model.user.bean.Organization">
+		insert into u_organization
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="organizationId != null">
+				organizationId,
+			</if>
+			<if test="branch != null">
+				branch,
+			</if>
+			<if test="userId != null">
+				userId,
+			</if>
+			<if test="parentId != null">
+				parentId,
+			</if>
+			<if test="expanded != null">
+				expanded,
+			</if>
+			<if test="isLeaf != null">
+				isLeaf,
+			</if>
+			<if test="hierarchy != null">
+				hierarchy,
+			</if>
+			<if test="createDate != null">
+				createDate,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="organizationId != null">
+				#{organizationId,jdbcType=INTEGER},
+			</if>
+			<if test="branch != null">
+				#{branch,jdbcType=VARCHAR},
+			</if>
+			<if test="userId != null">
+				#{userId,jdbcType=INTEGER},
+			</if>
+			<if test="parentId != null">
+				#{parentId,jdbcType=INTEGER},
+			</if>
+			<if test="expanded != null">
+				#{expanded,jdbcType=BIT},
+			</if>
+			<if test="isLeaf != null">
+				#{isLeaf,jdbcType=BIT},
+			</if>
+			<if test="hierarchy != null">
+				#{hierarchy,jdbcType=INTEGER},
+			</if>
+			<if test="createDate != null">
+				#{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="update" parameterType="com.zescs.dossier.model.user.bean.Organization">
+		update u_organization
+		<set>
+			<if test="branch != null">
+				branch = #{branch,jdbcType=VARCHAR},
+			</if>
+			<if test="userId != null">
+				userId = #{userId,jdbcType=INTEGER},
+			</if>
+			<if test="parentId != null">
+				parentId = #{parentId,jdbcType=INTEGER},
+			</if>
+			<if test="expanded != null">
+				expanded = #{expanded,jdbcType=BIT},
+			</if>
+			<if test="isLeaf != null">
+				isLeaf = #{isLeaf,jdbcType=BIT},
+			</if>
+			<if test="hierarchy != null">
+				hierarchy = #{hierarchy,jdbcType=INTEGER},
+			</if>
+			<if test="createDate != null">
+				createDate = #{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="remark != null">
+				remark = #{remark,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where organizationId = #{organizationId,jdbcType=INTEGER}
+	</update>
+</mapper>

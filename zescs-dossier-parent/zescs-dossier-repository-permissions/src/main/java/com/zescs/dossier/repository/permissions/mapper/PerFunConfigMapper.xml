@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zescs.dossier.repository.permissions.mapper.PerFunConfigMapper">
+  <resultMap id="BaseResultMap" type="com.zescs.dossier.model.permissions.bean.PerFunConfig">
+    <id column="configId" jdbcType="INTEGER" property="configId" />
+    <result column="permissionsId" jdbcType="INTEGER" property="permissionsId" />
+    <result column="functionId" jdbcType="INTEGER" property="functionId" />
+    <result column="displayOrder" jdbcType="INTEGER" property="displayOrder" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    configId, permissionsId, functionId, displayOrder, createDate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from p_perfunconfig
+    where configId = #{configId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from p_perfunconfig
+    where configId = #{configId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zescs.dossier.model.permissions.bean.PerFunConfig">
+    insert into p_perfunconfig (configId, permissionsId, functionId, 
+      displayOrder, createDate)
+    values (#{configId,jdbcType=INTEGER}, #{permissionsId,jdbcType=INTEGER}, #{functionId,jdbcType=INTEGER}, 
+      #{displayOrder,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zescs.dossier.model.permissions.bean.PerFunConfig">
+    insert into p_perfunconfig
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="configId != null">
+        configId,
+      </if>
+      <if test="permissionsId != null">
+        permissionsId,
+      </if>
+      <if test="functionId != null">
+        functionId,
+      </if>
+      <if test="displayOrder != null">
+        displayOrder,
+      </if>
+      <if test="createDate != null">
+        createDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="configId != null">
+        #{configId,jdbcType=INTEGER},
+      </if>
+      <if test="permissionsId != null">
+        #{permissionsId,jdbcType=INTEGER},
+      </if>
+      <if test="functionId != null">
+        #{functionId,jdbcType=INTEGER},
+      </if>
+      <if test="displayOrder != null">
+        #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zescs.dossier.model.permissions.bean.PerFunConfig">
+    update p_perfunconfig
+    <set>
+      <if test="permissionsId != null">
+        permissionsId = #{permissionsId,jdbcType=INTEGER},
+      </if>
+      <if test="functionId != null">
+        functionId = #{functionId,jdbcType=INTEGER},
+      </if>
+      <if test="displayOrder != null">
+        displayOrder = #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        createDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where configId = #{configId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zescs.dossier.model.permissions.bean.PerFunConfig">
+    update p_perfunconfig
+    set permissionsId = #{permissionsId,jdbcType=INTEGER},
+      functionId = #{functionId,jdbcType=INTEGER},
+      displayOrder = #{displayOrder,jdbcType=INTEGER},
+      createDate = #{createDate,jdbcType=TIMESTAMP}
+    where configId = #{configId,jdbcType=INTEGER}
+  </update>
+</mapper>

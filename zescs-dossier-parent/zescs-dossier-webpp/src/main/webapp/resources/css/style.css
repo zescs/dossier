@@ -1,0 +1,147 @@
+.from_item>label.common_label, #from_item>label.common_label_ckcode {
+	float: left;
+	display: inline-block;
+	overflow: hidden;
+	padding-right: 5px;
+	width: 80px;
+	height: 28px;
+	text-align: right;
+	font-weight: 700;
+	font-family: Consolas;
+	line-height: 28px;
+}
+
+.ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.from_item>label.common_label_ckcode {
+	height: 30px;
+	line-height: 30px;
+}
+
+.form_item_middle_ckcode {
+	width:230px;
+	height: 30px;
+	background: url(../images/wait.gif) no-repeat center center;
+}
+
+.form_item_middle_ckcode>img {
+	width: 180px;
+	height: 30px;
+	border: none;
+	cursor: pointer;
+}
+
+.from_btn>label.common_label {
+	float: left;
+	display: inline-block;
+	overflow: hidden;
+	padding-right: 5px;
+	width: 80px;
+	height: 27px;
+	text-align: right;
+	font-weight: 700;
+	font-family: Consolas;
+	line-height: 27px;
+}
+
+.from_item>label.common_textarea {
+	float: left;
+	display: inline-block;
+	overflow: hidden;
+	padding-right: 5px;
+	width: 80px;
+	text-align: right;
+	font-weight: 700;
+	font-family: Consolas;
+	line-height: 40px;
+}
+
+div.from_con_center {
+	margin: 30px auto 0 auto;
+	width: 300px;
+}
+
+.bgrow {
+	background: #fceee2;
+}
+
+.m-textbox-common {
+	width: 210px;
+}
+
+.m-textarea-common {
+	width: 210px;
+	height: 100px;
+}
+.m-btn-common{
+	width: 210px;
+}
+.common-label {
+	width: 80px;
+	padding-right: 2px;
+	display: inline-block;
+	text-align: right;
+	font-weight: bold;
+}
+
+.btn_common {
+	display: inline-block;
+	padding: 0px 3px;
+	color: #f52648;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	font-weight: bold;
+	-webkit-transition: color .5s ease-in;
+	-moz-transition: color .5s ease-in;
+	transition: color .5s ease-in;
+	cursor:pointer;
+}
+.main_logout_common{
+	display: inline-block;
+	padding: 0px 5px;
+	height:25px;
+	line-height:25px;
+	color: #e81a62;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	font-weight: bold;
+	-webkit-transition: background-color .5s ease-in;
+	-moz-transition: background-color .5s ease-in;
+	transition: background-color .5s ease-in;
+	cursor:pointer;
+}
+.main_logout_common:hover{
+	border-radius:5px;
+	background-color: #ff7300;
+	color:#fff;
+}
+.btn_common:hover {
+	color: #ff7300;
+}
+
+.nbsp_common {
+	display: inline-block;
+	width: 2px;
+}
+.ellipsis{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+#note_detial{
+	padding:5px;
+}
+.form_item_btn_IDCARD{
+	width:255px;
+	padding:2px 5px 2px 65px;
+	height:30px;
+}
+.form_item_btn_idcard_left{float:left;width:70px;}
+.form_item_btn_idcard_middle{float:left;margin-left:10px;width:100px;}
+.form_item_btn_idcard_right{float:right;width:70px;}

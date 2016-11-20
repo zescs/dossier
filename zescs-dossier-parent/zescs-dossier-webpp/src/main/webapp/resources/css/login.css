@@ -1,0 +1,171 @@
+body{
+	background: url(../images/backgrounds/login.jpg) no-repeat;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	background-size:cover;
+	/* background: url(../images/backgrounds/login.gif); */
+	padding:0px;
+	margin:0px;
+}
+div.login_con {
+	height: 377px;
+	background: url(../images/login.png) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	padding-bottom: 5px;
+}
+
+div.login_top {
+	width: 100%;
+	height: 75px;
+}
+
+div.login_middle {
+	padding-right: 43px;
+	padding-left: 230px;
+	width: 302px;
+}
+
+div.login_input {
+	padding-top: 30px;
+	width: 302px;
+}
+
+div.from_input_con {
+	padding-bottom: 10px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+div.from_input_con>label {
+	float: left;
+	display: block;
+	padding-top: 3px;
+	padding-right: 5px;
+	width: 65px;
+	height: 27px;
+	color: #333;
+	text-align: right;
+	font-weight: 700;
+	font-size: 13px;
+	font-family: Consolas;
+	line-height: 27px;
+}
+
+div.from_input_con>label>em {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+}
+
+div.from_input_con_control {
+	float: left;
+	padding-top: 3px;
+	width: 200px;
+	height: 27px;
+}
+
+div.securityCodeImg_con {
+	width: 180px;
+	height: 30px;
+	background: url(../images/wait.gif) no-repeat center center;
+}
+
+div.securityCodeImg_con>img {
+	width: 180px;
+	height: 30px;
+	border: none;
+	cursor: pointer;
+}
+
+div.div_btn {
+	position: relative;
+	padding-top: 23px;
+	padding-right: 256px;
+	padding-left: 122px;
+	width: 193px;
+	height: 70px;
+}
+
+div.div_btn_con {
+	width: 193px;
+	height: 70px;
+}
+
+li, p, ul {
+	margin: none;
+	padding: none;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+div.div_btn_con>ul {
+	margin: 0;
+	height: 70px;
+}
+
+div.div_btn_con>ul>li {
+	padding-top: 20px;
+	height: 30px;
+}
+
+div.div_btn_reg {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	width: 120px;
+	height: 35px;
+}
+
+div.div_btn_reg ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+div.div_btn_reg>ul>li {
+	padding-top: 10px;
+	height: 25px;
+}
+
+div.login_btn {
+	height: 60px;
+}
+
+div.login_btn>ul {
+	padding-left: 300px;
+}
+
+div.login_btn>ul>li {
+	float: left;
+}
+
+.submit {
+	border-radius: 5px;
+	display: inline-block;
+	width: 180px;
+	background: #AF0000;
+	height: 36px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 36px;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: 700;
+	vertical-align: middle;
+	overflow: hidden;
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, .5);
+	-webkit-transition:background-color .5s ease-in;
+	-moz-transition:background-color .5s ease-in;
+	transition:background-color .5s ease-in;
+}
+
+.submit:hover {
+	background: #f40;
+}

@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+
+.container {
+	width: 980px;
+	padding: 10px;
+	margin: 10px auto 20px auto;
+	background: #fff;
+	border: #ddd solid 1px;
+	border-radius: 5px;
+}
+
+.header {
+	height: 78px;
+	padding-bottom: 5px;
+	border-bottom: #ddd dashed 1px;
+}
+
+.title {
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-weight: bold;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size:16px;
+	padding: 0px 10px;
+}
+
+.header_info {
+	height: 18px;
+	color: #bbb;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.main {
+	padding: 10px 0px;
+	overflow-x: hidden;
+}
+
+.footer ul li {
+	padding: 3px 0px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.footer ul li a {
+	font-weight: bold;
+}

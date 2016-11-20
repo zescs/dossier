@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zescs.dossier.repository.permissions.mapper.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.zescs.dossier.model.permissions.bean.Role">
+    <id column="roleId" jdbcType="INTEGER" property="roleId" />
+    <result column="position" typeHandler="com.zescs.dossier.model.permissions.handler.EnumPositionHandler" property="position" />
+    <result column="roleName" jdbcType="VARCHAR" property="roleName" />
+    <result column="roleType" jdbcType="INTEGER" property="roleType" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    roleId, position, roleName, roleType, createDate, remark
+  </sql>
+  <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from p_role
+    where roleId = #{roleId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from p_role
+    where roleId = #{roleId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insertSelective" parameterType="com.zescs.dossier.model.permissions.bean.Role">
+    insert into p_role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        roleId,
+      </if>
+      <if test="position != null">
+        position,
+      </if>
+      <if test="roleName != null">
+        roleName,
+      </if>
+      <if test="roleType != null">
+        roleType,
+      </if>
+      <if test="createDate != null">
+        createDate,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=INTEGER},
+      </if>
+      <if test="roleName != null">
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleType != null">
+        #{roleType,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zescs.dossier.model.permissions.bean.Role">
+    update p_role
+    <set>
+      <if test="position != null">
+        position = #{position,jdbcType=INTEGER},
+      </if>
+      <if test="roleName != null">
+        roleName = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleType != null">
+        roleType = #{roleType,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        createDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where roleId = #{roleId,jdbcType=INTEGER}
+  </update>
+  
+  <select id="queryUserRoles" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  	SELECT
+	 <include refid="Base_Column_List" />
+	FROM
+		p_role
+	<where>
+		roleId IN (
+			SELECT
+				urc.roleId
+			FROM
+				p_userroleconfig urc
+			<where>
+				urc.userId = #{userId}
+			</where>				
+		)
+	</where>		
+  </select>
+  <!--  -->
+  <select id="findByUserIdAndLevel" parameterType="java.util.Map" resultMap="BaseResultMap">
+  	SELECT
+		r.*
+	FROM
+		p_role r,
+		p_userroleconfig urc,
+		u_user u
+	WHERE
+		r.roleId = urc.roleId
+		AND u.userId = urc.userId
+		AND u.userId = #{userId}
+		AND urc.`level` = #{level}
+  </select>
+</mapper>

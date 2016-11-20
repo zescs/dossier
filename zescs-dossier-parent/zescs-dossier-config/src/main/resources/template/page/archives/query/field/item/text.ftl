@@ -1,0 +1,1 @@
+<div field="${fieldName}" width="${width}" headerAlign="${headerAlign}" align="${contentAlign}" allowSort="${sort?string('true', 'false')}">${displayName}</div>

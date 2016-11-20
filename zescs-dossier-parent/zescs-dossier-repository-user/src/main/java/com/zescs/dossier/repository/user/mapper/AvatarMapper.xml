@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zescs.dossier.repository.user.mapper.AvatarMapper">
+	<resultMap id="BaseResultMap" type="com.zescs.dossier.model.user.bean.Avatar">
+		<id column="avatarId" jdbcType="INTEGER" property="avatarId" />
+		<result column="avatarName" jdbcType="VARCHAR" property="avatarName" />
+		<result column="avatarPath" jdbcType="VARCHAR" property="avatarPath" />
+		<result column="sourceFileName" jdbcType="VARCHAR" property="sourceFileName" />
+		<result column="sourceFilePath" jdbcType="VARCHAR" property="sourceFilePath" />
+		<result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+	</resultMap>
+	<resultMap extends="BaseResultMap" id="ResultMapWithBLOBs"
+		type="com.zescs.dossier.model.user.bean.Avatar">
+		<result column="avatarSize" jdbcType="LONGVARCHAR" property="avatarSize" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		avatarId, 
+		avatarName, 
+		avatarPath, 
+		sourceFileName,
+		sourceFilePath, 
+		createDate,
+		avatarSize
+	</sql>
+	<select id="findById" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+		select
+		<include refid="Base_Column_List" />
+		from u_avatar
+		where avatarId = #{avatarId,jdbcType=INTEGER}
+	</select>
+	<insert id="insert" parameterType="com.zescs.dossier.model.user.bean.Avatar">
+		insert into u_avatar
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="avatarId != null">
+				avatarId,
+			</if>
+			<if test="avatarName != null">
+				avatarName,
+			</if>
+			<if test="avatarPath != null">
+				avatarPath,
+			</if>
+			<if test="sourceFileName != null">
+				sourceFileName,
+			</if>
+			<if test="sourceFilePath != null">
+				sourceFilePath,
+			</if>
+			<if test="createDate != null">
+				createDate,
+			</if>
+			<if test="avatarSize != null">
+				avatarSize,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="avatarId != null">
+				#{avatarId,jdbcType=INTEGER},
+			</if>
+			<if test="avatarName != null">
+				#{avatarName,jdbcType=VARCHAR},
+			</if>
+			<if test="avatarPath != null">
+				#{avatarPath,jdbcType=VARCHAR},
+			</if>
+			<if test="sourceFileName != null">
+				#{sourceFileName,jdbcType=VARCHAR},
+			</if>
+			<if test="sourceFilePath != null">
+				#{sourceFilePath,jdbcType=VARCHAR},
+			</if>
+			<if test="createDate != null">
+				#{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="avatarSize != null">
+				#{avatarSize,jdbcType=LONGVARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="update" parameterType="com.zescs.dossier.model.user.bean.Avatar">
+		update u_avatar
+		<set>
+			<if test="avatarName != null">
+				avatarName = #{avatarName,jdbcType=VARCHAR},
+			</if>
+			<if test="avatarPath != null">
+				avatarPath = #{avatarPath,jdbcType=VARCHAR},
+			</if>
+			<if test="sourceFileName != null">
+				sourceFileName = #{sourceFileName,jdbcType=VARCHAR},
+			</if>
+			<if test="sourceFilePath != null">
+				sourceFilePath = #{sourceFilePath,jdbcType=VARCHAR},
+			</if>
+			<if test="createDate != null">
+				createDate = #{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="avatarSize != null">
+				avatarSize = #{avatarSize,jdbcType=LONGVARCHAR},
+			</if>
+		</set>
+		where avatarId = #{avatarId,jdbcType=INTEGER}
+	</update>
+</mapper>

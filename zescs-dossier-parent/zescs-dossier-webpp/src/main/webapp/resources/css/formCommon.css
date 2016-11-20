@@ -1,0 +1,10 @@
+div#form_content{overflow:hidden;padding:5px;}
+div.form_item{padding-bottom:10px;width:100%;}
+div.form_item>label{float:left;display:block;padding-top:3px;padding-right:5px;width:80px;height:27px;color:#333;text-align:right;font-weight:700;font-size:13px;font-family:Consolas;line-height:27px;}
+div.input_text{float:left;padding-top:3px;padding-right:5px;}
+div.form_item>label>em{display:inline-block;width:1em;height:1em;}
+div.input_btn{height:30px;}
+div.input_btn>ul>li{float:left;width:90px;height:30px;}
+div.securityCodeImg_con{width:180px;height:30px;background:url(../images/wait.gif) no-repeat center center;}
+div.securityCodeImg_con>img{width:180px;height:30px;border:none;cursor:pointer;}
+div.input_combobox{padding-top:5px;}

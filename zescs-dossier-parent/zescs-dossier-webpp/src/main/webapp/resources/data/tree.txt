@@ -1,0 +1,8 @@
+﻿[
+	{menuId: "base", displayName: "订单模块",isLeaf:false,
+		children: [
+			{menuId: "3", displayName: "商品列表",isLeaf:true,url:"/order/goods/list.action"},
+			{menuId: "4", displayName: "订单列表",isLeaf:true,url:"/order/list.action"}
+		]
+	}
+]

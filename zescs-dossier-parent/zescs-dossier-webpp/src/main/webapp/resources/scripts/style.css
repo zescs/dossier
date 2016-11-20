@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+span.zip{
+	background:url("../images/data-zip.png") no-repeat left center;
+}
+span.fileIcon{
+	display:inline-block;
+	padding-left:20px;
+	background:url("../images/date-icon.gif") no-repeat left center;
+}
+span.rar{
+	background:url("../images/data-zip.png") no-repeat left center;
+}
+.after::after {
+	display: block;
+	overflow: hidden;
+	clear: both;
+	content: "";
+}

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zescs.dossier.repository.data.mapper.DataConstantMapper">
+	<resultMap id="BaseResultMap"
+		type="com.zescs.dossier.model.data.bean.DataConstant">
+		<id column="systemConfigId" jdbcType="INTEGER" property="systemConfigId" />
+		<result column="sysKey" jdbcType="VARCHAR" property="sysKey" />
+		<result column="sysValue" jdbcType="VARCHAR" property="sysValue" />
+		<result column="enableState" jdbcType="BIT" property="enableState" />
+		<result column="flush" jdbcType="BIT" property="flush" />
+		<result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		systemConfigId, 
+		sysKey, 
+		sysValue, 
+		enableState, 
+		flush, 
+		createDate, 
+		remark
+	</sql>
+	<select id="findById" 
+		parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from d_dataconstant
+		where systemConfigId = #{systemConfigId,jdbcType=INTEGER}
+	</select>
+	
+	<select id="getValueByKey" parameterType="string" resultMap="BaseResultMap">
+		SELECT d.* from d_dataconstant d where d.sysKey=#{key}
+	</select>
+	
+	<insert id="insert" parameterType="com.zescs.dossier.model.data.bean.DataConstant" useGeneratedKeys="true" keyProperty="systemConfigId">
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="systemConfigId">
+    		SELECT LAST_INSERT_ID()
+        </selectKey>
+		insert into d_dataconstant
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				systemConfigId,
+			<if test="sysKey != null">
+				sysKey,
+			</if>
+			<if test="sysValue != null">
+				sysValue,
+			</if>
+			<if test="enableState != null">
+				enableState,
+			</if>
+			<if test="flush != null">
+				flush,
+			</if>
+			<if test="createDate != null">
+				createDate,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+				NULL,
+			<if test="sysKey != null">
+				#{sysKey,jdbcType=VARCHAR},
+			</if>
+			<if test="sysValue != null">
+				#{sysValue,jdbcType=VARCHAR},
+			</if>
+			<if test="enableState != null">
+				#{enableState,jdbcType=BIT},
+			</if>
+			<if test="flush != null">
+				#{flush,jdbcType=BIT},
+			</if>
+			<if test="createDate != null">
+				#{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="update" parameterType="com.zescs.dossier.model.data.bean.DataConstant">
+		update d_dataconstant
+		<set>
+			<if test="sysKey != null">
+				sysKey = #{sysKey,jdbcType=VARCHAR},
+			</if>
+			<if test="sysValue != null">
+				sysValue = #{sysValue,jdbcType=VARCHAR},
+			</if>
+			<if test="enableState != null">
+				enableState = #{enableState,jdbcType=BIT},
+			</if>
+			<if test="flush != null">
+				flush = #{flush,jdbcType=BIT},
+			</if>
+			<if test="createDate != null">
+				createDate = #{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="remark != null">
+				remark = #{remark,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where systemConfigId = #{systemConfigId,jdbcType=INTEGER}
+	</update>
+	
+	<select id="queryListByCondition" parameterType="com.zescs.dossier.common.pagination.Condition" resultMap="BaseResultMap">
+		select d.* from d_dataconstant d 
+		<where>
+		   <if test="criterias!=null and criterias.size()>0">
+				<foreach collection="criterias" item="criteria">
+					<choose>
+						<when test="criteria.singleValue">
+							 and ${criteria.property} ${criteria.expression} #{criteria.value}
+						</when>
+						<when test="criteria.betweenValue">
+							 and ${criteria.property} BETWEEN #{criteria.startValue} AND #{criteria.endValue}
+						</when>
+						<when test="criteria.isIn">
+							 and ${criteria.property} ${criteria.expression}
+			                 <foreach close=")" collection="criteria.value" item="listItem" open="(" separator=",">
+			                    #{listItem}
+			                 </foreach>
+						</when>
+					</choose>
+			    </foreach>
+			</if>
+		</where>
+		<if test="orders!=null and orders.size()>0">
+			ORDER BY 
+			<foreach collection="orders" item="order">
+				${order.property} ${order.orderType}
+			</foreach>
+		</if>
+	</select>
+	
+	<select id="countByProperty" parameterType="java.util.Map" resultType="java.lang.Integer">
+		select count(1) from d_dataconstant d 
+		<where>
+			d.${propertyName} = #{propertyValue}
+		</where>
+	</select>
+	
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		delete from d_dataconstant
+		<where>
+			systemConfigId =#{id}
+		</where>
+	</delete>
+</mapper>

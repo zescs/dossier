@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zescs.dossier.repository.data.mapper.DataClockMapper">
+	<resultMap id="BaseResultMap" type="com.zescs.dossier.model.data.bean.DataClock">
+		<id column="systemClock" jdbcType="INTEGER" property="systemClock" />
+		<result column="clockName" jdbcType="VARCHAR" property="clockName" />
+		<result column="clocKey" jdbcType="VARCHAR" property="clocKey" />
+		<result column="clockValue" jdbcType="VARCHAR" property="clockValue" />
+		<result column="displayOrder" jdbcType="INTEGER" property="displayOrder" />
+		<result column="type" jdbcType="INTEGER" property="type" />
+		<result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		systemClock, clockName, clocKey, clockValue, displayOrder, type, createDate,
+		remark
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from d_dataclock
+		where systemClock = #{systemClock,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from d_dataclock
+		where systemClock = #{systemClock,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.zescs.dossier.model.data.bean.DataClock">
+		insert into d_dataclock (systemClock, clockName, clocKey,
+		clockValue, displayOrder, type,
+		createDate, remark)
+		values (#{systemClock,jdbcType=INTEGER}, #{clockName,jdbcType=VARCHAR},
+		#{clocKey,jdbcType=VARCHAR},
+		#{clockValue,jdbcType=VARCHAR}, #{displayOrder,jdbcType=INTEGER}, #{type,jdbcType=INTEGER},
+		#{createDate,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.zescs.dossier.model.data.bean.DataClock">
+		insert into d_dataclock
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="systemClock != null">
+				systemClock,
+			</if>
+			<if test="clockName != null">
+				clockName,
+			</if>
+			<if test="clocKey != null">
+				clocKey,
+			</if>
+			<if test="clockValue != null">
+				clockValue,
+			</if>
+			<if test="displayOrder != null">
+				displayOrder,
+			</if>
+			<if test="type != null">
+				type,
+			</if>
+			<if test="createDate != null">
+				createDate,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="systemClock != null">
+				#{systemClock,jdbcType=INTEGER},
+			</if>
+			<if test="clockName != null">
+				#{clockName,jdbcType=VARCHAR},
+			</if>
+			<if test="clocKey != null">
+				#{clocKey,jdbcType=VARCHAR},
+			</if>
+			<if test="clockValue != null">
+				#{clockValue,jdbcType=VARCHAR},
+			</if>
+			<if test="displayOrder != null">
+				#{displayOrder,jdbcType=INTEGER},
+			</if>
+			<if test="type != null">
+				#{type,jdbcType=INTEGER},
+			</if>
+			<if test="createDate != null">
+				#{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.zescs.dossier.model.data.bean.DataClock">
+		update d_dataclock
+		<set>
+			<if test="clockName != null">
+				clockName = #{clockName,jdbcType=VARCHAR},
+			</if>
+			<if test="clocKey != null">
+				clocKey = #{clocKey,jdbcType=VARCHAR},
+			</if>
+			<if test="clockValue != null">
+				clockValue = #{clockValue,jdbcType=VARCHAR},
+			</if>
+			<if test="displayOrder != null">
+				displayOrder = #{displayOrder,jdbcType=INTEGER},
+			</if>
+			<if test="type != null">
+				type = #{type,jdbcType=INTEGER},
+			</if>
+			<if test="createDate != null">
+				createDate = #{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="remark != null">
+				remark = #{remark,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where systemClock = #{systemClock,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.zescs.dossier.model.data.bean.DataClock">
+		update d_dataclock
+		set clockName = #{clockName,jdbcType=VARCHAR},
+		clocKey = #{clocKey,jdbcType=VARCHAR},
+		clockValue = #{clockValue,jdbcType=VARCHAR},
+		displayOrder = #{displayOrder,jdbcType=INTEGER},
+		type = #{type,jdbcType=INTEGER},
+		createDate = #{createDate,jdbcType=TIMESTAMP},
+		remark = #{remark,jdbcType=VARCHAR}
+		where systemClock = #{systemClock,jdbcType=INTEGER}
+	</update>
+</mapper>

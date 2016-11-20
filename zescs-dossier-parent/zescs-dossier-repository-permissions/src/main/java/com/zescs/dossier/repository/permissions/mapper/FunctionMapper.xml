@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zescs.dossier.repository.permissions.mapper.FunctionMapper">
+  <resultMap id="BaseResultMap" type="com.zescs.dossier.model.permissions.bean.Function">
+    <id column="functionId" jdbcType="INTEGER" property="functionId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="methhodName" jdbcType="VARCHAR" property="methhodName" />
+    <result column="msgCode" jdbcType="VARCHAR" property="msgCode" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="displayOrder" jdbcType="INTEGER" property="displayOrder" />
+    <result column="functionType" jdbcType="INTEGER" property="functionType" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    functionId, name, methhodName, msgCode, icon, displayOrder, functionType, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from p_function
+    where functionId = #{functionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from p_function
+    where functionId = #{functionId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zescs.dossier.model.permissions.bean.Function">
+    insert into p_function (functionId, name, methhodName, 
+      msgCode, icon, displayOrder, 
+      functionType, remark)
+    values (#{functionId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{methhodName,jdbcType=VARCHAR}, 
+      #{msgCode,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{displayOrder,jdbcType=INTEGER}, 
+      #{functionType,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zescs.dossier.model.permissions.bean.Function">
+    insert into p_function
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="functionId != null">
+        functionId,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="methhodName != null">
+        methhodName,
+      </if>
+      <if test="msgCode != null">
+        msgCode,
+      </if>
+      <if test="icon != null">
+        icon,
+      </if>
+      <if test="displayOrder != null">
+        displayOrder,
+      </if>
+      <if test="functionType != null">
+        functionType,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="functionId != null">
+        #{functionId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="methhodName != null">
+        #{methhodName,jdbcType=VARCHAR},
+      </if>
+      <if test="msgCode != null">
+        #{msgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="displayOrder != null">
+        #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="functionType != null">
+        #{functionType,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zescs.dossier.model.permissions.bean.Function">
+    update p_function
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="methhodName != null">
+        methhodName = #{methhodName,jdbcType=VARCHAR},
+      </if>
+      <if test="msgCode != null">
+        msgCode = #{msgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        icon = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="displayOrder != null">
+        displayOrder = #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="functionType != null">
+        functionType = #{functionType,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where functionId = #{functionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zescs.dossier.model.permissions.bean.Function">
+    update p_function
+    set name = #{name,jdbcType=VARCHAR},
+      methhodName = #{methhodName,jdbcType=VARCHAR},
+      msgCode = #{msgCode,jdbcType=VARCHAR},
+      icon = #{icon,jdbcType=VARCHAR},
+      displayOrder = #{displayOrder,jdbcType=INTEGER},
+      functionType = #{functionType,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR}
+    where functionId = #{functionId,jdbcType=INTEGER}
+  </update>
+</mapper>

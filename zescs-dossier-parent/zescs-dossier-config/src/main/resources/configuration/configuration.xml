@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+	<header>
+		<result delimiterParsingDisabled="true" forceReloadCheck="true">
+			<expressionEngine
+				config-class="org.apache.commons.configuration.tree.xpath.XPathExpressionEngine" />
+		</result>
+		<combiner>
+			<additional>
+				<list-nodes>
+					<node>table</node>
+				</list-nodes>
+			</additional>
+		</combiner>
+	</header>
+	<override>
+		<!-- 启动环境变量 -->
+		<env />
+		<!-- 系统用户配置文件 -->
+		<properties fileName="configuration/mail/mail.properties"
+			throwExceptionOnMissing="true" config-name="mail" config-optional="true">
+			<reloadingStrategy refreshDelay="10000"
+				config-class="org.apache.commons.configuration.reloading.FileChangedReloadingStrategy" />
+		</properties>
+		<properties fileName="configuration/rsa/rsaDataKey.properties"
+			config-name="rsaDataKey">
+			<reloadingStrategy refreshDelay="10000"
+				config-class="org.apache.commons.configuration.reloading.FileChangedReloadingStrategy" />
+		</properties>
+		<properties fileName="configuration/rsa/rsaKey.properties"
+			config-name="rsaKey">
+			<reloadingStrategy refreshDelay="10000"
+				config-class="org.apache.commons.configuration.reloading.FileChangedReloadingStrategy" />
+		</properties>
+		<properties fileName="configuration/config/config.properties"
+			config-name="config">
+			<reloadingStrategy refreshDelay="10000"
+				config-class="org.apache.commons.configuration.reloading.FileChangedReloadingStrategy" />
+		</properties>
+		<properties fileName="configuration/ftp/ftp.properties"
+			config-name="ftp">
+			<reloadingStrategy refreshDelay="10000"
+				config-class="org.apache.commons.configuration.reloading.FileChangedReloadingStrategy" />
+		</properties>
+		<properties fileName="config/persistent/jdbc.properties"
+			config-name="jdbc">
+			<reloadingStrategy refreshDelay="10000"
+				config-class="org.apache.commons.configuration.reloading.FileChangedReloadingStrategy" />
+		</properties>
+	</override>
+</configuration>

@@ -1,0 +1,146 @@
+html,body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	height: 100%;
+}
+/*清除元素的默认定义*/
+header,footer,nav,section,article,aside,address,figure,figcaption,ul,ok,dl,li,dd,dt,p,p,img,h1,h2,h3,h4,h5,h6,p,form
+	{
+	margin: 0px;
+	padding: 0px;
+}
+/*追加css定义*/
+header,footer,nav,hgroup,section,article,aside,figure {
+	display: block;
+}
+/*元素的具体定义*/
+a {
+	text-decoration: none;
+	overflow: hidden;
+}
+
+img,a>img {
+	border: none;
+}
+
+.after::after {
+	display: block;
+	overflow: hidden;
+	clear: both;
+	content: "";
+}
+
+li {
+	list-style: none;
+	list-style-position: inside;
+}
+
+#progressBar {
+	height: 23px;
+	line-height: 23px;
+	border: 1px solid #0F0;
+	overflow: hidden;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.initProgress {
+	height: 23px;
+	line-height: 23px;
+	width: 0px;
+	background-color: #00cc00;
+	text-align: center;
+	color: #FFF;
+	font-weight: bold;
+	overflow: hidden;
+}
+/*表单*/
+div.form_content {
+	margin: 0 auto;
+	padding: 10px 0px;
+}
+
+div.form_input {
+	height: 30px;
+	padding-bottom: 10px;
+}
+
+div.form_input>label {
+	display: block;
+	float: left;
+	width: 70px;
+	padding-right: 10px;
+	text-align: right;
+	line-height: 30px;
+	height: 30px;
+	color: #333;
+	font-weight: bold;
+}
+
+ul.center {
+	margin: 0 auto;
+}
+
+div.form_fild {
+	height: 27px;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	float: left;
+	position: relative;
+}
+
+div.form_remark {
+	height: 100px;
+	padding-bottom: 10px;
+}
+
+div.form_remark>label {
+	display: block;
+	height: 100px;
+	float: left;
+	height: 30px;
+	width: 70px;
+	padding-right: 10px;
+	text-align: right;
+	color: #333;
+	font-weight: bold;
+	line-height: 100px;
+}
+
+div.form_fild_remark {
+	height: 97px;
+	padding-top: 2px;
+	padding-bottom: 1px;
+}
+
+div.form_fild>ul>li {
+	float: left;
+	height: 27px;
+	width: 100px;
+	text-align: center;
+}
+
+.asLabel .mini-textbox-border,.asLabel .mini-textbox-input,.asLabel .mini-buttonedit-border,.asLabel .mini-buttonedit-input,.asLabel .mini-textboxlist-border
+	{
+	border: 0;
+	background: none;
+	cursor: default;
+}
+
+.asLabel .mini-buttonedit-button,.asLabel .mini-textboxlist-close {
+	display: none;
+}
+
+.asLabel .mini-textboxlist-item {
+	padding-right: 8px;
+}
+
+.myrow {
+	background: #fceee2;
+}
+.wh{
+	width:100%;height:100%
+}

@@ -1,0 +1,14 @@
+[
+	{
+		"id": "default",
+		"text": "默认"
+	},
+	{
+		"id": "Medium",
+		"text": "Medium"
+	},
+	{
+		"id": "large",
+		"text": "Large"
+	}
+]
